@@ -2,8 +2,10 @@ package com.project.learnify
 
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,12 +23,13 @@ class HomeScreenFragment : Fragment(R.layout.fragment_home_screen) {
     private lateinit var courseAdapter: CourseAdapter
     private lateinit var recyclerView: RecyclerView
     private var isLinearLayoutManager = true
+    private lateinit var toolbar: Toolbar
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-       /* chooseLayout()*/
+        /*chooseLayout()*/
 
     }
     override fun onCreateView(
@@ -36,10 +39,35 @@ class HomeScreenFragment : Fragment(R.layout.fragment_home_screen) {
         // Inflate the layout for this fragment
         _binding = FragmentHomeScreenBinding.inflate(inflater,container,false)
         val view = binding.root
+        toolbar = view.findViewById(R.id.toolbar)
+
+
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        toolbar.inflateMenu(R.menu.layout_menu)
+        toolbar.setOnMenuItemClickListener {
+            when(it.itemId){
+                R.id.contact_us -> {
+                  val action = HomeScreenFragmentDirections.actionHomeScreenFragmentToContactFragment()
+                    findNavController().navigate(action)
+                    true
+                }
+                R.id.about_us -> {
+                    val action = HomeScreenFragmentDirections.actionHomeScreenFragmentToAboutFragment()
+                    findNavController().navigate(action)
+                    true
+                }
+                R.id.switch_action -> {
+                    isLinearLayoutManager = !isLinearLayoutManager
+                    chooseLayout()
+                    setIcon(it)
+                    true
+                }
+                else -> false
+            }
+        }
         recyclerView = binding.recyclerview
         recyclerView.setHasFixedSize(true)
 
@@ -81,23 +109,23 @@ class HomeScreenFragment : Fragment(R.layout.fragment_home_screen) {
         _binding = null
     }
 
-    fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater): Boolean {
+    /*fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater): Boolean {
         //inflate the layout
         inflater.inflate(R.menu.layout_menu, menu)
 
-        val layoutButton = menu?.findItem(R.id.change_layout)
+        val layoutButton = menu?.findItem(R.id.switch_action)
         if (layoutButton != null) {
             setIcon(layoutButton)
         }
 
         return true
-    }
+    }*/
     private fun chooseLayout(){
         if (isLinearLayoutManager){
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         } else {
-            recyclerView.layoutManager = GridLayoutManager(requireContext(), GridLayoutManager.VERTICAL)
+            recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         }
         recyclerView.adapter = courseAdapter
 
@@ -112,7 +140,7 @@ class HomeScreenFragment : Fragment(R.layout.fragment_home_screen) {
             }
 
     }
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
         return when(item.itemId) {
             R.id.change_layout -> {
@@ -124,5 +152,5 @@ class HomeScreenFragment : Fragment(R.layout.fragment_home_screen) {
 
             else -> super.onOptionsItemSelected(item)
         }
-    }
+    }*/
 }

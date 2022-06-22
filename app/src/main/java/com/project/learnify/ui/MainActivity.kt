@@ -49,12 +49,12 @@ class MainActivity : AppCompatActivity() {
             a.replace(R.id.fragmentContainerView, b)
             a.commit()
         }
-        else if (item.itemId == R.id.change_layout) {
+       /* else if (item.itemId == R.id.change_layout) {
             var a = supportFragmentManager.beginTransaction()
             var b = LayoutFragment()
             a.replace(R.id.fragmentContainerView, b)
             a.commit()
-        }
+        }*/
         return  super.onOptionsItemSelected(item)
     }
     override fun onSupportNavigateUp(): Boolean {

@@ -13,17 +13,14 @@
         android:orderInCategory="100"
         app:showAsAction="never"
         android:title="About" />
-    <item
-        android:id="@+id/change_layout"
-        android:orderInCategory="100"
-        app:showAsAction="never"
-        android:title="Change layout" />
 
-   <!-- <item
-       android:id="@+id/switch_action"
-       android:icon="@drawable/ic_grid"
-       app:showAsAction="always"
-       android:title="@string/switch_icon" />-->
+    <item
+        android:id="@+id/switch_action"
+        android:icon="@drawable/ic_grid"
+        app:showAsAction="always"
+        android:title="@string/switch_icon" />
+
 
 
 </menu>
+

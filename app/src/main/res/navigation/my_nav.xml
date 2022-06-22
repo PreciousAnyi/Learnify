@@ -31,6 +31,12 @@
         <action
             android:id="@+id/action_homeScreenFragment_to_courseDetailsFragment"
             app:destination="@id/courseDetailsFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/courseDetailsFragment"
