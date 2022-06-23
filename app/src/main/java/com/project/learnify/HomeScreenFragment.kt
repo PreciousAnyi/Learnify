@@ -76,23 +76,18 @@ class HomeScreenFragment : Fragment(R.layout.fragment_home_screen) {
         //adding course image, course title and course details
         courseList.add(Courses(R.drawable.course_image,
             "Android App Development Course For Beginners",
-        " Welcome To The Complete Android Developer Course: Beginner To Advanced\n" +
-                "⇉ Watch the promo video to see How You Can Begin Building And Developing Your Very Own Android Applications Today!\n" +
-                "⇉ This Course is MASSIVE! You receive over 17+ hours of video content and 140+ lectures!\n" +
-                "⇉ Join Over 275,000+ Students Who Have Enrolled In My Udemy Courses This Year!\n" +
-                "⇉ 7,500+ Five Star Reviews on our courses prove Students Who Enrolling Are Getting Real Results!\n" +
-                "Then this course is for you! Click \"Take This Course Now\" For Instant Life-Time Access!"))
+            "Android app development is widely considered one of the most important skills for  developers to have. It's a great investment into medium- and long-term professional career growth.\n" +
+                    "\n" +
+                    "If bugs slip into your Android application, it can be very challenging to locate and fix them. Furthermore, even after you fix the bugs, it can take days or even weeks until all your users update the app to actually receive these fixes. That's a tough reality of professional Android developer's job. Fortunately, you can greatly reduce the number of bugs in your applications by unit testing your code!\n" +
+                    "\n" +
+                    "To make your applications unit testable, you'll need to write decoupled code that follows best design principles. This automatically guarantees easier long-term maintenance. In addition, unit testing makes developing Android applications easier and spares a lot of time when done right. "))
         courseList.add(Courses(R.drawable.android_user_interface,
             "Android User Interface",
-            " courseList.add(Courses(R.drawable.course_image,\n" +
-                    "            \"Android App Development Course For Beginners\",\n" +
-                    "        \" Welcome To The Complete Android Developer Course: Beginner To Advanced\\n\" +\n" +
-                    "                \" Watch the promo video to see How You Can Begin Building And Developing Your Very Own Android Applications Today!\\n\" +\n" +
-                    "                \" This Course is MASSIVE! You receive over 17+ hours of video content and 140+ lectures!\\n\" +\n" +
-                    "                \" Join Over 275,000+ Students Who Have Enrolled In My Udemy Courses This Year!\\n\" +\n" +
-                    "                \" 7,500+ Five Star Reviews on our courses prove Students Who Enrolling Are Getting Real Results!\\n\" +\n" +
-                    "                \"Then this course is for you! Click \\\"Take This Course Now\\\" For Instant Life-Time Access!\"))"))
-
+            "Android user interface is widely considered one of the most important skills for senior Android developers to have. It's a great investment into medium- and long-term professional career growth.\n" +
+                    "\n" +
+                    "If bugs slip into your Android application, it can be very challenging to locate and fix them. Furthermore, even after you fix the bugs, it can take days or even weeks until all your users update the app to actually receive these fixes. That's a tough reality of professional Android developer's job. Fortunately, you can greatly reduce the number of bugs in your applications by unit testing your code!\n" +
+                    "\n" +
+                    "To make your applications unit testable, you'll need to write decoupled code that follows best design principles. This automatically guarantees easier long-term maintenance. In addition, unit testing makes developing Android applications easier and spares a lot of time when done right. "))
         courseList.add(Courses(R.drawable.unit_testing,
             "Android Unit Testing Development",
             "Unit testing is widely considered one of the most important skills for senior Android developers to have. It's a great investment into medium- and long-term professional career growth.\n" +
